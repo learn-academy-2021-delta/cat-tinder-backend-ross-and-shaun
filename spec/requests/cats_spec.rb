@@ -1,7 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Cats", type: :request do
-  describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+RSpec.describe Cat, type: :model do
+  it "should validate name" do
+    cat = Cat.create
+    expect(cat.errors[:name]).to_not be_empty
   end
 end
+
